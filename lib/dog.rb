@@ -65,7 +65,7 @@ end
 def self.find_by_name
 end
 
-def self.update
+def update
 end
 
 end
