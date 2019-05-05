@@ -61,7 +61,6 @@ def self.find_by_name(name)
   row = DB[:conn].execute(sql,name)[0]
   dog = self.new_from_db(row)
   dog
-
 end
 
 def update
