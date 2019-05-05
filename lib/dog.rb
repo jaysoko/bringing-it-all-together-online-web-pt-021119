@@ -63,6 +63,13 @@ def self.new_from_db
 end
 
 def self.find_by_name(name)
+  sql = "SELECT * FROM dogs WHERE name = ?"
+  row = DB[:conn].execute(sql,name)[0]
+  attr_hash = {:name => row[1], :breed => row[2], :id => row[0]}
+  dog = Dog.new(attr_hash)
+  dog.save
+  dog
+
 end
 
 def update
