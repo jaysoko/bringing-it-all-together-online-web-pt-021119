@@ -9,7 +9,7 @@ def initialize(attr_hash)
   @breed = attr_hash[:breed]
 end
 
-def create_table
+def self.create_table
   sql = <<-SQL
     CREATE TABLE IF NOT EXISTS dogs (
       id INTEGER PRIMARY KEY,
@@ -19,7 +19,7 @@ def create_table
     DB[:conn].execute(sql)
   end
 
-  def drop_table
+  def self.drop_table
     sql = <<-SQL
       DROP TABLE dogs
       SQL
