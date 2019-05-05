@@ -41,7 +41,7 @@ def self.create(attr_hash)
   new_dog
 end
 
-def find_by_id(id)
+def self.find_by_id(id)
   sql = <<-SQL
     SELECT FROM dogs where id = ?
     SQL
