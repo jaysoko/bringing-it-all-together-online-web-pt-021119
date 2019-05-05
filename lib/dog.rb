@@ -46,7 +46,7 @@ def self.find_by_id(id)
     SELECT * FROM dogs where id = ?
     SQL
   row = DB[:conn].execute(sql,id)
-  attr_hash = {:name >= row[1], :breed >= row[2], :id >= row[0]}
+  attr_hash = {:name => row[1], :breed => row[2], :id => row[0]}
   binding.pry
   dog = Dog.new(attr_hash)
   dog
