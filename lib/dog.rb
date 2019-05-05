@@ -66,9 +66,7 @@ def self.find_by_name(name)
 end
 
 def update
-  sql = <<-SQL
-    UPDATE dogs SET name = ?, breed = ?, id = ?
-    SQL
+  sql = "UPDATE dogs SET name = ?, breed = ?, id = ?"
   DB[:conn].execute(sql,self.name,self.breed,self.id)
 end
 
