@@ -41,14 +41,10 @@ def self.create(attr_hash)
 end
 
 def self.find_by_id(id)
-  sql = <<-SQL
-    SELECT * FROM dogs where id = ?
-    SQL
-  row = DB[:conn].execute(sql,id)[0]
-  attr_hash = {:name => row[1], :breed => row[2], :id => row[0]}
-  dog = Dog.new(attr_hash)
-  dog.save
-  dog
+  sql = "SELECT * FROM dogs WHERE id = ? LIMIT 1"
+  row = DB[:conn].execute(sql)[0]
+  binding.pry
+
 end
 
 def self.find_or_create_by
