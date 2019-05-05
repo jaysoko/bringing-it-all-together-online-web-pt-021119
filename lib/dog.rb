@@ -46,9 +46,9 @@ def self.find_by_id(id)
     SELECT * FROM dogs where id = ?
     SQL
   row = DB[:conn].execute(sql,id)[0]
+  binding.pry
   dog = Dog.new(row)
   dog
-  binding.pry
 end
 
 end
