@@ -41,7 +41,7 @@ def self.create(attr_hash)
 end
 
 def self.find_by_id(id)
-  sql = "SELECT * FROM dogs WHERE id = ? LIMIT 1"
+  sql = "SELECT * FROM dogs WHERE id = ?"
   row = DB[:conn].execute(sql)[0]
   binding.pry
 
