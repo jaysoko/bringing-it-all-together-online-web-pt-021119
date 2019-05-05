@@ -44,3 +44,5 @@ def self.create(attr_hash)
   new_dog
   binding.pry
 end
+
+end
