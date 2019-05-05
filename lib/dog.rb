@@ -48,10 +48,14 @@ end
 
 def self.find_or_create_by(name:, breed:)
   sql = 'SELECT * FROM dogs WHERE name = ? and breed = ?'
-  row = DB[:conn].execute(sql,name,breed)[0]
-  binding.pry
-
-
+  dog = DB[:conn].execute(sql,name,breed)[0]
+  if dog.empty?
+    dog = Dog.create(name: name, breed: breed)
+  else
+    data = dog[0]
+    dog = Dog.new_from_db(data)
+  end
+  dog
 end
 
 def self.new_from_db(row)
