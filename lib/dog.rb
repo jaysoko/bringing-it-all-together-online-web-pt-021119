@@ -48,6 +48,7 @@ def self.find_by_id(id)
   row = DB[:conn].execute(sql,id)[0]
   dog = Dog.new(row)
   dog
+  binding.pry
 end
 
 end
