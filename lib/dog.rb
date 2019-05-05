@@ -41,4 +41,5 @@ def create(attr_hash)
   new_dog = Dog.new(attr_hash[:name], attr_hash[:breed])
   new_dog.save
   new_dog
+  binding.pry
 end
