@@ -45,7 +45,9 @@ def self.find_by_id(id)
   sql = <<-SQL
     SELECT * FROM dogs where id = ?
     SQL
-  DB[:conn].execute(sql,id)
+  row = DB[:conn].execute(sql,id)
+  dog = Dog.new(row)
+  dog
 end
 
 end
