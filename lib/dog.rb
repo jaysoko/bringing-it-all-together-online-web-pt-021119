@@ -38,7 +38,6 @@ end
 def self.create(attr_hash)
   new_dog = Dog.new(attr_hash)
   new_dog.save
-  new_dog
 end
 
 def self.find_by_id(id)
