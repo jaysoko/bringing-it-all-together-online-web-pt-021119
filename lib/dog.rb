@@ -54,7 +54,6 @@ def self.find_by_id(id)
   dog = Dog.new(attr_hash)
   dog.save
   dog
-  binding.pry
 end
 
 end
