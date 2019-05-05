@@ -53,7 +53,6 @@ def self.find_by_id(id)
   attr_hash = {:name => row[1], :breed => row[2], :id => row[0]}
   dog = Dog.new(attr_hash)
   dog.save
-  dog
 end
 
 end
