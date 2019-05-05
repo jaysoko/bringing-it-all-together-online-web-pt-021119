@@ -6,7 +6,6 @@ attr_accessor :name, :breed, :id
 def initialize(attr_hash)
   @name = attr_hash[:name]
   @breed = attr_hash[:breed]
-  binding.pry
 end
 
 
